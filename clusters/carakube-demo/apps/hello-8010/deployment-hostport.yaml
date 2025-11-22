@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-8010
+  labels:
+    app: hello-8010
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-8010
+  template:
+    metadata:
+      labels:
+        app: hello-8010
+    spec:
+      containers:
+        - name: http-echo
+          image: hashicorp/http-echo:0.2.3
+          args:
+            - "-text=hello from flux 🎉"
+            - "-listen=:8010"
+          ports:
+            - containerPort: 8010
+              hostPort: 8010
