@@ -6,6 +6,8 @@ metadata:
     app: hello-8010
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: hello-8010
