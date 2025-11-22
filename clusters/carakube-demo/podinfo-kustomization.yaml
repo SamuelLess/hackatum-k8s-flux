@@ -9,7 +9,7 @@ spec:
   path: ./kustomize
   prune: true
   retryInterval: 2m0s
-  sourceRef:
+  sourceRef: # This is a GitRepository in flux-system
     kind: GitRepository
     name: podinfo
   targetNamespace: default
