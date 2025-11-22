@@ -20,7 +20,7 @@ spec:
         - name: http-echo
           image: hashicorp/http-echo:0.2.3
           args:
-            - "-text=GitOps flux demo server 🚀"
+            - "-text=GitOps flux demo server 👋"
             - "-listen=:8010"
           ports:
             - containerPort: 8010
