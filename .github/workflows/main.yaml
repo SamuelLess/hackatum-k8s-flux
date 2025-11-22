@@ -1,0 +1,25 @@
+name: Flux Reconcile
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Reconcile Flux cluster
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: 2222
+          script: |
+            cd carakube
+            git fetch
+            git reset --hard origin/main
+            chmod +x ./kubernetes/flux-reconcile.sh
+            ./kubernetes/flux-reconcile.sh
