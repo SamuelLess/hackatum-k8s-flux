@@ -18,7 +18,7 @@ spec:
         - name: http-echo
           image: hashicorp/http-echo:0.2.3
           args:
-            - "-text=👋 hello from flux 🎉"
+            - "-text=hello from flux 👋"
             - "-listen=:8010"
           ports:
             - containerPort: 8010
