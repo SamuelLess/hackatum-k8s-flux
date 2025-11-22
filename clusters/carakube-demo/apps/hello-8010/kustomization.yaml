@@ -3,7 +3,4 @@ kind: Kustomization
 namespace: default
 resources:
   - deployment-hostport.yaml
-
-  - service-nodeport.yaml
-
   - service-nodeport.yaml
