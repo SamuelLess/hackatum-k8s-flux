@@ -15,3 +15,10 @@ spec:
   targetNamespace: default
   timeout: 3m0s
   wait: true
+  postBuild:
+    patchesStrategicMerge:
+      - |
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: podinfo
