@@ -3,3 +3,8 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+patches:
+- target:
+    kind: ClusterRole
+    name: crd-controller-flux-system
+  path: crd-controller-flux-system-restricted-role.yaml
