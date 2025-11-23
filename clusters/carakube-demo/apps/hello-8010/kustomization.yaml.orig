@@ -4,4 +4,3 @@ namespace: default
 resources:
   - deployment-hostport.yaml
   - service-nodeport.yaml
-  - networkpolicy-default-deny.yaml
