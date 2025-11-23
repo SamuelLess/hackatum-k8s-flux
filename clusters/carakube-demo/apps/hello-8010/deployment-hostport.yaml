@@ -25,6 +25,10 @@ spec:
           ports:
             - containerPort: 8010
               hostPort: 8010
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
           securityContext:
             allowPrivilegeEscalation: false
             runAsNonRoot: true
