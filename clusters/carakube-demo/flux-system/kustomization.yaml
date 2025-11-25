@@ -3,3 +3,12 @@ kind: Kustomization
 resources:
 - gotk-components.yaml
 - gotk-sync.yaml
+patches:
+- target:
+    kind: ServiceAccount
+    name: notification-controller
+    namespace: flux-system
+  patch: |-
+    - op: add
+      path: /automountServiceAccountToken
+      value: false
