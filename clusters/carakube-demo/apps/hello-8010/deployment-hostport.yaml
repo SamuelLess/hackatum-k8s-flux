@@ -16,6 +16,7 @@ spec:
       labels:
         app: hello-8010
     spec:
+      serviceAccountName: hello-8010-sa
       containers:
         - name: http-echo
           image: hashicorp/http-echo:0.2.3
